@@ -18,6 +18,8 @@ Along the way, we reflect on and develop Camtrap DP and InsectAI data standards,
 
 We will prove to ourselves (and the world!) that we can store our data in a common format, laying foundations for future collaborations and insect image megadatasets 💾
 
+The living document for the datathon, including the agenda, can be found [here](https://docs.google.com/document/d/1cKWa8PrLWBIouEVd4cDQMRyp790YwyWv_DP1zxm-vxc/edit?usp=drivesdk).
+
 # InsectAI data challenges
 
 The "minidatasets" presented here demonstrate one or more of the common challenges of InsectAI data:
