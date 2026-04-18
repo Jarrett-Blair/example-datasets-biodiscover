@@ -1,0 +1,17 @@
+name: Fix filenames
+on: workflow_dispatch
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Rename files with colons
+        run: |
+          git ls-files | grep ":" | while read f; do
+            new=$(echo "$f" | tr ':' '-')
+            git mv "$f" "$new"
+          done
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git commit -m "Fix colons in filenames"
+          git push
