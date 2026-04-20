@@ -75,3 +75,4 @@ Please consider contributing links to models and other resources for insect dete
 
 [https://github.com/InsectAI-COST-Action/awesome-insectai.git]
 
+
