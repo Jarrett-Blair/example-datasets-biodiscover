@@ -9,6 +9,7 @@ import subprocess
 import argparse
 from typing import Any
 from dataclasses import dataclass
+import datetime
 
 @dataclass
 class RuleReturn:
@@ -64,7 +65,12 @@ def handle_issues(data, dry_run):
         # 1. Process Violations (Create or Update)
         if failed_checks:
             table = rule_check_table(all_checks)
-            body = f"# Example data check\n\nResults from comparing the structure of datasets/{ds_name}.\n\n{table}"
+            
+            # Generate a clean timestamp in UTC
+            timestamp = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')
+            
+            # Append the timestamp to the bottom of the body
+            body = f"# Example data check\n\nResults from comparing the structure of datasets/{ds_name}.\n\n{table}\n\n---\n*Last updated: {timestamp}*"
 
             if dry_run:
                 print(f"\n{'='*50}\nDRY RUN: {'UPDATE' if issue_number else 'CREATE'} ISSUE\n{'='*50}")
