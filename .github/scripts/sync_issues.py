@@ -49,7 +49,7 @@ STATUS_SYMBOLS = {
     "unknown" : "⚪"
 }
 
-def generate_overview_table(data: dict) -> str:
+def generate_overview_table(data: dict, pr : bool) -> str:
     """Generates a high-level summary table of all datasets and their statuses."""
     em_space = "&emsp;"
     lines = [
@@ -78,7 +78,7 @@ def generate_overview_table(data: dict) -> str:
         # Center tags aren't needed here because the <td> is center-aligned
         img_md = f'<img src="{img_path}" height="150">' if img_path else "_No image tag found_"
 
-        lines.append(f"| [**{ds_name}**](/datasets/{ds_name}) | {status_icon} {status.capitalize()} ({n_pass}/{n_chk}) | {img_md} |")
+        lines.append(f"| [**{ds_name}**]({'/..' if pr else ''}/datasets/{ds_name}) | {status_icon} {status.capitalize()} ({n_pass}/{n_chk}) | {img_md} |")
     
     return "\n".join(lines)
 
@@ -161,7 +161,7 @@ def handle_pr(data, dry_run):
     if not data:
         full_body = f"{signature}\n❌❌❌ No datasets found to validate. ❌❌❌"
     else:
-        overview = generate_overview_table(data)
+        overview = generate_overview_table(data, pr=True)
         comments = [f"{signature}\n## 📊 Dataset Validation Overview\n\n{overview}"]
         
         for ds_name, ds_info in data.items():
@@ -218,7 +218,7 @@ def handle_readme(data, dry_run):
     with open(readme_path, "r", encoding="utf-8") as f:
         content = f.read()
 
-    table = generate_overview_table(data)
+    table = generate_overview_table(data, pr=False)
     timestamp = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')
 
     # 1. Update Table Block using exact string splitting (safer than regex for markdown tables)
