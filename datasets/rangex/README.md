@@ -1,3 +1,4 @@
+<!-- Image: media/HE22_01_83_2037_2.jpg -->
 # 🐞 RangeX dataset (COCO format)
 
 <img src="media/HE22_01_83_2037_2.jpg" alt="RangeX example image" width="300"/>

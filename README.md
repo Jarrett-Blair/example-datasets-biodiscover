@@ -1,8 +1,46 @@
-[![Dataset Standards Validation](https://github.com/InsectAI-COST-Action/example-datasets/actions/workflows/validate-datasets.yaml/badge.svg)](https://github.com/InsectAI-COST-Action/example-datasets/actions/workflows/validate-datasets.yaml)
-
 # InsectAI Example Datasets and Standards Development
 
-<img src="resources/insectAI.svg" alt="InsectAI Logo" width="300"/>
+<div align="center" width="100%">
+    <img src="resources/insectAI.svg" alt="InsectAI Logo" width="500"/>
+    <!-- <br>
+    <a href="https://github.com/InsectAI-COST-Action/example-datasets/actions/workflows/validate-datasets.yaml">
+        <img src="https://github.com/InsectAI-COST-Action/example-datasets/actions/workflows/validate-datasets.yaml/badge.svg" alt="Datasets Standards Validation" style="max-width: 100%;">
+    </a> -->
+</div>
+
+---
+
+## 📁 Example Dataset Progress
+
+
+
+
+<!-- START: DATASET PROGRESS TABLE -->
+<!-- Do NOT manually edit! -->
+
+| <br>**Dataset**<br> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | <br>**Status**<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | <br>**Example Image**<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| ---: | :---: | :---: |
+| [**amber**](/datasets/amber) | 🔴 Failed (1/5) | _No image tag found_ |
+| [**antenna**](/datasets/antenna) | 🟠 Partial (2/5) | _No image tag found_ |
+| [**diopsis**](/datasets/diopsis) | 🟠 Partial (2/5) | _No image tag found_ |
+| [**flatbug**](/datasets/flatbug) | 🟠 Partial (2/7) | <img src="datasets/flatbug/data/ALUS/Araneae_Unknown_2020_11_10_4723.jpg " height="150"> |
+| [**flower_visitors**](/datasets/flower_visitors) | 🔴 Failed (1/5) | _No image tag found_ |
+| [**ias**](/datasets/ias) | 🟠 Partial (2/5) | <img src="datasets/ias/data/20250613022959-snapshot.jpg " height="150"> |
+| [**insect-detect**](/datasets/insect-detect) | 🔴 Failed (1/5) | _No image tag found_ |
+| [**lepmon**](/datasets/lepmon) | 🟠 Partial (2/5) | _No image tag found_ |
+| [**minimon**](/datasets/minimon) | 🟡 Almost (3/5) | _No image tag found_ |
+| [**plant-pollinator-interactions**](/datasets/plant-pollinator-interactions) | 🔴 Failed (1/5) | _No image tag found_ |
+| [**rangex**](/datasets/rangex) | 🟡 Almost (4/5) | <img src="datasets/rangex/media/HE22_01_83_2037_2.jpg " height="150"> |
+
+<!-- Last updated: 2026-04-20 21:44:47 UTC -->
+<!-- END: DATASET PROGRESS TABLE -->
+
+
+
+
+
+
+
 
 ---
 
@@ -74,4 +112,5 @@ The "minidatasets" presented here demonstrate one or more of the common challeng
 Please consider contributing links to models and other resources for insect detection and classification below:
 
 [https://github.com/InsectAI-COST-Action/awesome-insectai.git]
+
 
