@@ -3,7 +3,7 @@ name: Dataset Standards Validation
 on:
   push:
     branches: [ "main" ]
-  pull_request:
+  pull_request_target: 
     branches: [ "main" ]
   schedule:
     - cron: '0 0,12 * * *'
@@ -18,7 +18,18 @@ jobs:
       contents: read
 
     steps:
-      - uses: actions/checkout@v6
+      - name: Checkout trusted scripts
+        uses: actions/checkout@v6
+        with:
+          path: base-repo
+
+
+      - name: Checkout untrusted PR datasets
+        if: github.event_name == 'pull_request_target'
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: pr-repo
 
       - name: Install uv
         uses: astral-sh/setup-uv@v8.1.0
@@ -26,30 +37,35 @@ jobs:
           version: "latest"
 
       - name: Run validation & Comment (PR Check)
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request_target'
         env:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          chmod +x .github/scripts/validate_datasets.py
-          # Capture JSON output and prevent step failure
-          OUTPUT=$(.github/scripts/validate_datasets.py --format json || true)
-          # Pass results to sync_issues.py in PR mode
+          chmod +x base-repo/.github/scripts/validate_datasets.py
+          
+          # Run the TRUSTED script against the UNTRUSTED datasets folder
+          OUTPUT=$(base-repo/.github/scripts/validate_datasets.py --dir pr-repo/datasets --format json || true)
+          
           export RESULTS="$OUTPUT"
-          python .github/scripts/sync_issues.py --mode pr
+          
+          # Run the TRUSTED sync script
+          python base-repo/.github/scripts/sync_issues.py --mode pr
 
       - name: Run validation (Issue Sync)
         id: run_validation
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request_target'
         run: |
-          chmod +x .github/scripts/validate_datasets.py
-          OUTPUT=$(.github/scripts/validate_datasets.py --format json || true)
+          chmod +x base-repo/.github/scripts/validate_datasets.py
+          
+          # We are on 'main', so we just evaluate the base-repo datasets
+          OUTPUT=$(base-repo/.github/scripts/validate_datasets.py --dir base-repo/datasets --format json || true)
           echo "results=$OUTPUT" >> $GITHUB_OUTPUT
 
       - name: Sync GitHub Issues
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request_target'
         env:
           GH_TOKEN: ${{ github.token }}
           RESULTS: ${{ steps.run_validation.outputs.results }}
         run: |
-          python .github/scripts/sync_issues.py --mode issues
+          python base-repo/.github/scripts/sync_issues.py --mode issues
