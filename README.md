@@ -2,10 +2,10 @@
 
 <div align="center" width="100%">
     <img src="resources/insectAI.svg" alt="InsectAI Logo" width="500"/>
-    <br>
+    <!-- <br>
     <a href="https://github.com/InsectAI-COST-Action/example-datasets/actions/workflows/validate-datasets.yaml">
         <img src="https://github.com/InsectAI-COST-Action/example-datasets/actions/workflows/validate-datasets.yaml/badge.svg" alt="Datasets Standards Validation" style="max-width: 100%;">
-    </a>
+    </a> -->
 </div>
 
 ---
