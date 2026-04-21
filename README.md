@@ -16,7 +16,7 @@
 
 | <br>**Dataset**<br> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | <br>**Status**<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | <br>**Example Image**<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 | ---: | :---: | :---: |
-| [**amber**](/datasets/amber) | 🔴 Failed (1/5) | _No image tag found_ |
+| [**amber**](/datasets/amber) | 🟠 Partial (2/5) | <img src="datasets/amber/media/raw_images/20241102032319-snapshot.jpg" height="150"> |
 | [**antenna**](/datasets/antenna) | 🟠 Partial (2/5) | _No image tag found_ |
 | [**diopsis**](/datasets/diopsis) | 🟠 Partial (2/5) | _No image tag found_ |
 | [**flatbug**](/datasets/flatbug) | 🟠 Partial (3/7) | <img src="datasets/flatbug/raw-data/ALUS/Araneae_Unknown_2020_11_10_4723.jpg" height="150"> |
@@ -28,7 +28,7 @@
 | [**plant-pollinator-interactions**](/datasets/plant-pollinator-interactions) | 🔴 Failed (1/5) | _No image tag found_ |
 | [**rangex**](/datasets/rangex) | 🟢 Success (5/5) | <img src="datasets/rangex/media/HE22_01_83_2037_2.jpg" height="150"> |
 
-<!-- Last updated: 2026-04-21 09:39:24 UTC -->
+<!-- Last updated: 2026-04-21 10:10:43 UTC -->
 <!-- END: DATASET PROGRESS TABLE -->
 ---
 
