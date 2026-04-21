@@ -58,7 +58,7 @@ jobs:
           chmod +x base-repo/.github/scripts/validate_datasets.py
           
           cd pr-repo
-          OUTPUT=$(../base-repo/.github/scripts/validate_datasets.py --dir datasets --format json || true)
+          OUTPUT=$(../base-repo/.github/scripts/validate_datasets.py --format json || true)
           cd ..
           
           export RESULTS="$OUTPUT"
@@ -72,7 +72,7 @@ jobs:
           chmod +x base-repo/.github/scripts/validate_datasets.py
           
           cd base-repo
-          OUTPUT=$(.github/scripts/validate_datasets.py --dir datasets --format json || true)
+          OUTPUT=$(.github/scripts/validate_datasets.py --format json || true)
           cd ..
           
           echo "results=$OUTPUT" >> $GITHUB_OUTPUT
